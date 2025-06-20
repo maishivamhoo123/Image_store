@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import axios from 'axios';
-const Backend_Id = 'http://localhost:5000';
+const Backend_Id = 'https://backend-image-kn59.onrender.com';
 const CameraCapture = () => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
