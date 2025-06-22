@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // ✅ Import for navigation
 
 const Backend_Id = 'https://backend-image-kn59.onrender.com';
 
@@ -9,6 +10,7 @@ const CameraCapture = () => {
   const [imageData, setImageData] = useState(null);
   const [confirmed, setConfirmed] = useState(false);
   const [uploading, setUploading] = useState(false);
+  const navigate = useNavigate(); // ✅ React Router navigation hook
 
   const startCamera = async () => {
     const stream = await navigator.mediaDevices.getUserMedia({ video: true });
@@ -54,7 +56,7 @@ const CameraCapture = () => {
   };
 
   const seePrediction = () => {
-    window.location.href = 'https://image-store-h7cn.onrender.com/latest';
+    navigate('/latest'); // ✅ Go to React route `/latest`
   };
 
   return (
