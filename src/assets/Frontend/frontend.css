@@ -1,0 +1,38 @@
+.latest-image-card {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.latest-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 1rem;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.status {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+.status.error {
+  color: #d9534f;
+}
+
+.loading-text {
+  color: #555;
+}
