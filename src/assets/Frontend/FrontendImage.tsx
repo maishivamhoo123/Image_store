@@ -15,7 +15,7 @@ export default function LatestImage() {
   };
 // https://backend-image-kn59.onrender.com
   useEffect(() => {
-    fetch("http://localhost:5000/latest-image")
+    fetch("https://backend-image-kn59.onrender.com/latest-image")
       .then((res) => res.json())
       .then((data) => {
         if (data.url) {

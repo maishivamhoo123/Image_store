@@ -2,8 +2,9 @@ import React, { useRef, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // ✅ Import for navigation
 
-const Backend_Id = 'http://localhost:5000';
-// https://backend-image-kn59.onrender.com
+const Backend_Id = 'https://backend-image-kn59.onrender.com';
+// https://backend-image-kn59.onrender.com    
+// http://localhost:5000
 
 const CameraCapture = () => {
   const videoRef = useRef(null);
@@ -39,7 +40,7 @@ const CameraCapture = () => {
   };
   const triggerPrediction = async () => {
   try {
-    const res = await axios.get(`http://localhost:5000/predict`);
+    const res = await axios.get(`https://backend-image-kn59.onrender.com/predict`);
     alert('✅ Prediction triggered!\n' + res.data.message);
   } catch (error) {
     console.error(error);
