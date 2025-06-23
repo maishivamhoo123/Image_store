@@ -13,9 +13,9 @@ export default function LatestImage() {
     const match = viewLink.match(/\/d\/([a-zA-Z0-9_-]+)/);
     return match ? match[1] : null;
   };
-
+// https://backend-image-kn59.onrender.com
   useEffect(() => {
-    fetch("https://backend-image-kn59.onrender.com/latest-image")
+    fetch("http://localhost:5000/latest-image")
       .then((res) => res.json())
       .then((data) => {
         if (data.url) {

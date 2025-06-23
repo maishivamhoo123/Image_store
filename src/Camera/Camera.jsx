@@ -2,7 +2,8 @@ import React, { useRef, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // ✅ Import for navigation
 
-const Backend_Id = 'https://backend-image-kn59.onrender.com';
+const Backend_Id = 'http://localhost:5000';
+// https://backend-image-kn59.onrender.com
 
 const CameraCapture = () => {
   const videoRef = useRef(null);
@@ -36,6 +37,16 @@ const CameraCapture = () => {
       video.srcObject = null;
     }
   };
+  const triggerPrediction = async () => {
+  try {
+    const res = await axios.get(`http://localhost:5000/predict`);
+    alert('✅ Prediction triggered!\n' + res.data.message);
+  } catch (error) {
+    console.error(error);
+    alert('❌ Prediction failed');
+  }
+};
+
 
   const uploadImage = async () => {
     setUploading(true);
@@ -95,11 +106,19 @@ const CameraCapture = () => {
             {uploading ? 'Uploading...' : 'Confirm & Upload'}
           </button>
           <button
+  onClick={triggerPrediction}
+  className="bg-orange-600 text-white px-4 py-2 rounded mt-2"
+>
+  🔁 Run Prediction
+</button>
+          <button
             onClick={seePrediction}
             className="bg-yellow-400 text-black px-4 py-2 rounded"
           >
             See Prediction
           </button>
+          
+
         </div>
       )}
     </div>
